@@ -63,7 +63,7 @@ yuqiao17@uw.edu (Diana Ding)
 # Project Planning: Interactive Comic Website
 
 ## Project Scope
-This project aims to develop an interactive website that introduces the characters of *One Hundred Years of Solitude* through illustration and animation. By combining visual storytelling with non-linear navigation, the website provides users with an immersive and intuitive way to explore the Buendía family tree and the novel's complex character relationships. The focus is on front-end development, responsive design, and interaction logic.
+This project aims to develop an interactive website that introduces the characters of *One Hundred Years of Solitude* through illustration and animation. By combining visual storytelling with non-linear navigation, the website provides users with an immersive and intuitive way to explore the Buendía family tree and the novel’s complex character relationships. The focus is on front-end development, responsive design, and interaction logic.
 
 ## Target Users
 - Readers and fans of *One Hundred Years of Solitude*
@@ -93,6 +93,7 @@ This project aims to develop an interactive website that introduces the characte
 - **Illustration & Design**: Diana Ding
 - **GitHub Repository**: [https://github.com/DianaDing1017/510-work](https://github.com/DianaDing1017/510-work)
 
+
 ## 🔧 Developer Progress Update
 
 ### ✅ Virtual Environment Setup
@@ -105,7 +106,6 @@ conda create -n comic_env python=3.9
 conda activate comic_env
 pip install flask
 ```
-
 ## ✅ Project Progress
 
 - The project structure includes organized folders:
@@ -122,4 +122,4 @@ pip install flask
 - The project runs locally without errors using:
   ```bash
   python app.py
-  ``` 
+
