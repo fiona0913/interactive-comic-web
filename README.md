@@ -111,7 +111,7 @@ pip install flask
   - Title animation for *One Hundred Years of Solitude*
   - Horizontal scrolling effect triggered by vertical scroll
   - Character portraits that appear one by one as the user scrolls
-  - Modal popups with character information shown on image click
+  - Modal popups with character information shown on image click.
 
 - The project runs locally without errors using:
   ```bash
