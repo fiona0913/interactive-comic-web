@@ -99,7 +99,7 @@ To recreate the environment:
 conda create -n comic_env python=3.9
 conda activate comic_env
 pip install flask
-
+```
 ## ✅ Project Progress
 
 - The project structure includes organized folders:
