@@ -24,6 +24,7 @@ An immersive web-based comic that combines storytelling and interactivity throug
 - Interactive features that elevate the storytelling (e.g., scroll-based animations).
 
 ---
+
 ## Key Deliverables
 
 - Original illustrated comic with interactive story branches.
@@ -32,12 +33,14 @@ An immersive web-based comic that combines storytelling and interactivity throug
 - Deployment on a public platform.
 
 ---
+
 ## Special Constraints
 
 - The website must be responsive and optimized for performance.
 - Smooth and intuitive user interaction is a core priority.
 
 ---
+
 ## Expected Outcome
 
 - A working interactive comic website that users can explore online.
@@ -45,6 +48,7 @@ An immersive web-based comic that combines storytelling and interactivity throug
 - A valuable portfolio piece demonstrating skills in storytelling, UX/UI, and front-end development.
 
 ---
+
 ## Tech Stack
 - **HTML5 & CSS3** – Structuring and styling the interactive comic layout.
 - **JavaScript (ES6+)** – Core interactivity and logic handling.
@@ -52,6 +56,7 @@ An immersive web-based comic that combines storytelling and interactivity throug
 - **Lottie/Web Animations API** – Integrating vector-based animations exported from After Effects.
 
 ---
+
 ## Client info
 yuqiao17@uw.edu (Diana Ding)
 
@@ -88,6 +93,7 @@ This project aims to develop an interactive website that introduces the characte
 - **Illustration & Design**: Diana Ding
 - **GitHub Repository**: [https://github.com/DianaDing1017/510-work](https://github.com/DianaDing1017/510-work)
 
+
 ## 🔧 Developer Progress Update
 
 ### ✅ Virtual Environment Setup
@@ -116,3 +122,4 @@ pip install flask
 - The project runs locally without errors using:
   ```bash
   python app.py
+
