@@ -92,3 +92,37 @@ This project aims to develop an interactive website that introduces the characte
 - **Developer**: Diana Ding ([yuqiao17@uw.edu](mailto:yuqiao17@uw.edu))
 - **Illustration & Design**: Diana Ding
 - **GitHub Repository**: [https://github.com/DianaDing1017/510-work](https://github.com/DianaDing1017/510-work)
+<<<<<<< HEAD
+=======
+
+
+## 🔧 Developer Progress Update
+
+### ✅ Virtual Environment Setup
+A dedicated Conda environment named `comic_env` has been created and activated for this project. Required packages like Flask have been installed.
+
+To recreate the environment:
+
+```bash
+conda create -n comic_env python=3.9
+conda activate comic_env
+pip install flask
+```
+## ✅ Project Progress
+
+- The project structure includes organized folders:
+  - `static/` – for CSS, JavaScript, and image assets
+  - `templates/` – for HTML templates
+  - `app.py` – main Flask application file
+
+- The homepage now includes:
+  - Title animation for *One Hundred Years of Solitude*
+  - Horizontal scrolling effect triggered by vertical scroll
+  - Character portraits that appear one by one as the user scrolls
+  - Modal popups with character information shown on image click.
+
+- The project runs locally without errors using:
+  ```bash
+  python app.py
+
+>>>>>>> eaf32077729cdc6ddad5a10b4b0e764645a2accb
