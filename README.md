@@ -92,6 +92,8 @@ This project aims to develop an interactive website that introduces the characte
 - **Developer**: Diana Ding ([yuqiao17@uw.edu](mailto:yuqiao17@uw.edu))
 - **Illustration & Design**: Diana Ding
 - **GitHub Repository**: [https://github.com/DianaDing1017/510-work](https://github.com/DianaDing1017/510-work)
+<<<<<<< HEAD
+=======
 
 
 ## 🔧 Developer Progress Update
@@ -123,3 +125,4 @@ pip install flask
   ```bash
   python app.py
 
+>>>>>>> eaf32077729cdc6ddad5a10b4b0e764645a2accb
