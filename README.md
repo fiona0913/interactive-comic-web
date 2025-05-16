@@ -175,3 +175,80 @@ pip install flask
 
 The developer has successfully implemented the homepage animation, Chapter 1 narrative content, and interactive character cards as core features. The overall visual and functional direction aligns well with expectations. Minor polishing is still needed for responsiveness and UX cues (e.g., adding a flip hint icon). The next priorities are completing Chapter 2 and 3 content, expanding the multi-chapter character card system, and further optimizing the mobile experience.
 
+---
+
+# 📝 TECHIN510 – Interactive Comic Website Submission (Week 7)
+
+## 📌 Meeting Notes – Week 7
+
+### ✅ Feature Progress
+
+- Developed **Chapter 2** content and added new character cards
+- Refined **character card illustration style** to better match overall web aesthetics
+- Redesigned the **scroll progress bar**, now featuring a **goldfish icon** as a symbolic reference from *One Hundred Years of Solitude*
+- Implemented a **rain ambience audio toggle** at the bottom-right corner of the webpage to enrich the reading experience
+- Improved **letter spacing** in Chapter 1 for better text readability
+- Updated the **README.md** to include:
+  - Setup instructions for **Windows** and **macOS**
+  - Usage guidance
+  - Project progress summary
+  - Known issues
+
+---
+
+### 💬 Client Feedback (Fiona)
+
+- On **Windows (>800px width)**, the spacing between text and images in Chapter 2 is too large, which affects the reading experience
+- The **bottom of the webpage** feels unfinished — Fiona suggested adding a **“To Be Continued”** footer with stronger visual design
+
+---
+
+### 🛠 Feedback Handling
+
+- [ ] Layout spacing on Windows is identified and scheduled for improvement
+- [ ] “To Be Continued” footer will be designed and added in the next iteration
+- [x] All other key feedback items addressed (including UI consistency and interactivity improvements)
+
+---
+
+### 🧾 README.md Updated Summary
+
+- ✅ Cross-platform (Windows/macOS) setup and run instructions
+- ✅ Usage overview for local development
+- ✅ Development progress and feature highlights
+- ✅ Known issues documented for reviewers
+- ✅ Technologies and file structure explained
+
+---
+## ⚙️ Quick Start Guide
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/fiona0913/interactive-comic-web
+cd interactive-comic-web
+```
+### 2. Create and Activate a Virtual Environment
+- On macOS / Linux:
+ ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+ ```
+- Windows:
+ ```bash
+python -m venv .venv
+.venv\Scripts\activate
+ ```
+- Install Dependencies
+```bash
+pip install -r requirements.txt
+ ```
+- Run the Application
+```bash
+python app.py
+```
+ ```
+
+ ```
+
+```
