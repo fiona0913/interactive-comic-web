@@ -92,8 +92,8 @@ This project aims to develop an interactive website that introduces the characte
 - **Developer**: Diana Ding ([yuqiao17@uw.edu](mailto:yuqiao17@uw.edu))
 - **Illustration & Design**: Diana Ding
 - **GitHub Repository**: [https://github.com/DianaDing1017/510-work](https://github.com/DianaDing1017/510-work)
-<<<<<<< HEAD
-=======
+
+
 
 
 ## 🔧 Developer Progress Update
@@ -174,3 +174,4 @@ pip install flask
 ## 🔄 **Reflection**
 
 The developer has successfully implemented the homepage animation, Chapter 1 narrative content, and interactive character cards as core features. The overall visual and functional direction aligns well with expectations. Minor polishing is still needed for responsiveness and UX cues (e.g., adding a flip hint icon). The next priorities are completing Chapter 2 and 3 content, expanding the multi-chapter character card system, and further optimizing the mobile experience.
+

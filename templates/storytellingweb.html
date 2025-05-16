@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -23,6 +23,8 @@
 
     <link href="/static/css/animate.css" rel="stylesheet" />
     <link href="/static/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/character-cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
@@ -226,141 +228,6 @@
             </div>
         </div>
     </div>
-</div>
-<!-- CSS for character cards -->
-<style>
-    .character-cards-section {
-        padding: 80px 0;
-        background-color: #000000; /* 黑色背景 */
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        color: #ffffff; /* 白色文字 */
-    }
-    
-    .cards-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .character-card {
-        width: 250px;
-        height: 350px;
-        perspective: 1000px;
-        cursor: pointer;
-    }
-    
-    .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 15px rgba(255,255,255,0.2);
-        border-radius: 12px;
-    }
-    
-    .character-card.flipped .card-inner {
-        transform: rotateY(180deg);
-    }
-    
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden; /* Safari */
-        backface-visibility: hidden;
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    
-    .card-front {
-        background-color: #333333; /* 灰色卡片 */
-    }
-    
-    .card-front img {
-        width: 100%;
-        height: 260px;
-        object-fit: cover;
-    }
-    
-    .card-front h3 {
-        padding: 15px;
-        text-align: center;
-        margin: 0;
-        color: #ffffff; /* 白色文字 */
-        font-size: 1.2rem;
-    }
-    
-    .card-back {
-        background-color: #444444; /* 深灰色背面 */
-        color: white;
-        transform: rotateY(180deg);
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .card-back h3 {
-        margin-top: 0;
-        margin-bottom: 15px;
-        text-align: center;
-        font-size: 1.4rem;
-        color: #ffffff; /* 白色文字 */
-    }
-    
-    .card-back p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: #ffffff; /* 白色文字 */
-    }
-    
-    @media (max-width: 768px) {
-        .cards-container {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .character-card {
-            width: 280px;
-            margin-bottom: 20px;
-        }
-    }
-    </style>
-    
-    <!-- JavaScript for card flip functionality -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // 获取所有角色卡片
-        const characterCards = document.querySelectorAll('.character-card');
-        
-        // 为每个卡片添加点击事件监听器
-        characterCards.forEach(card => {
-            card.addEventListener('click', function() {
-                // 切换翻转状态
-                this.classList.toggle('flipped');
-                
-                // 调试信息
-                console.log('Card clicked: ', this);
-                console.log('Card has flipped class: ', this.classList.contains('flipped'));
-            });
-        });
-    });
-    </script>
-
-
 
          <div class="musa">
             <div class="big_title">
@@ -370,9 +237,6 @@
              <div class="visual">
                     <div class="level l1">
                      <img src="/static/img/level3_base.png" class="itemAnim">
-
-
-
                         <div id="animation_container">
                     		<canvas id="canvas"></canvas>
                     		<div id="dom_overlay_container"></div>
@@ -382,89 +246,20 @@
 
                     </div>
                     <div class="level l3 parallaxy-animate" parallaxy-options='{"multiplier":"0.20", "direction":"up", "positionType": "relative"}'>
-                         <img src="/static/img/level7_palazzi.png" class="itemAnim">
+                        <img src="/static/img/level2_palazzi.png" class="itemAnim">
                     </div>
                     <div class="level l4 parallaxy-animate" parallaxy-options='{"multiplier":"0.25", "direction":"up", "positionType": "relative"}'>
                         <img src="/static/img/level6_palazzi.png" class="itemAnim">
                     </div>
-
                 </div>
-            </div>
-
-</div>
-
-        <!-- Main text -->
-        <div class="main_text blocco3">
-            <div class="wrapper">
-
-                <p class="wow fadeIn">
-                Úrsula once dreamt of a road paved with damp earth, leading to a city she had never seen.
-                <br>
-                <br>
-                When she woke, she set out anyway—a small, determined woman walking through jungles, valleys, rain, and light. No one expected her to return with strangers and news from the outside world, but she did. And from then on, Macondo was no longer alone.
-                <br>
-                <br>
-                The children were growing.
-                <br>
-                <br>
-                José Arcadio, tall and silent, carried a fire behind his eyes. He met a woman like wind—she came and went in a night, and their fates were sealed. He left without goodbye, leaving only the shadow of a child behind.
-                <br>
-                <br>
-                Aureliano watched in silence. He spoke little but saw everything. His hands were silver-threaded and precise. Time moved around him differently, as if waiting for a prophecy to be fulfilled.
-                <br>
-                <br>
-                And then came Rebeca, the girl with the bag of bones. Adopted into the house, she brought no memories, only the habit of eating earth and the scent of something not yet named. She wandered the corridors at night and made the house whisper.
-                <br>
-                <br>
-                The family was expanding. And time began to blur at the edges.
-                <br>
-                <br>
-                Each believed they were writing their own story, not knowing their names were already inked into the margins of a manuscript that had long been sealed.
-
-                   </p>
-            </div>
-
-        </div>
-        <!-- End main text -->
-         
-        
-        <div class="luce">
-            <div class="big_title">
 
             </div>
-
-             <div class="visual">
-                    <div class="level l1">
-                     <img src="/static/img/level3_base.png" class="itemAnim">
-
-
-
-                        <div id="animation_container">
-                    		<canvas id="canvas"></canvas>
-                    		<div id="dom_overlay_container"></div>
-                    	</div>
-             <div class="level l2 parallaxy-animate" parallaxy-options='{"multiplier":"0.15", "direction":"up", "positionType": "relative"}'>
-                        <img src="/static/img/level5_palazzi.png" class="itemAnim">
-
-                    </div>
-                    <div class="level l3 parallaxy-animate" parallaxy-options='{"multiplier":"0.20", "direction":"up", "positionType": "relative"}'>
-                         <img src="/static/img/level7_palazzi.png" class="itemAnim">
-                    </div>
-                    <div class="level l4 parallaxy-animate" parallaxy-options='{"multiplier":"0.25", "direction":"up", "positionType": "relative"}'>
-                        <img src="/static/img/level6_palazzi.png" class="itemAnim">
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-
+        <!-- End interstellar -->
         <!-- Main text -->
         <div class="main_text blocco4">
             <div class="wrapper">
-
                 <p class="wow fadeIn">
+                <br>
                 Úrsula once dreamt of a road paved with damp earth, leading to a city she had never seen.
                 <br>
                 <br>
@@ -492,8 +287,71 @@
             </div>
 
         </div>
-        
         <!-- End main text -->
+         <!-- HTML for character cards section -->
+<div class="character-cards-section">
+    <div class="wrapper">
+        <h2 class="section-title wow fadeIn">Characters of Macondo</h2>
+        <div class="cards-container">
+            <div class="character-card wow fadeIn">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/static/img/character5.png" alt="José Arcadio Buendía">
+                        <h3>José Arcadio</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>José Arcadio</h3>
+                        <p>The eldest son, tall and intense. He burned silently. One night, a woman arrived like a storm and left without a trace—except for the child she didn’t take. José Arcadio vanished, driven by desire and marked by abandonment.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-card wow fadeIn" data-wow-delay="0.2s">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/static/img/character2.png" alt="Úrsula Iguarán">
+                        <h3>Úrsula Iguarán</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Úrsula Iguarán</h3>
+                        <p>She dreamed of a road that no one believed existed—and walked it anyway. Through rain and jungle, she returned not just with strangers, but with a future. Because of her, Macondo was no longer alone.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-card wow fadeIn" data-wow-delay="0.4s">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/static/img/character6.png" alt="Melquíades">
+                        <h3>Aureliano</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Aureliano</h3>
+                        <p>He said little, but the world moved differently around him. With quiet hands and watchful eyes, he stood at the edge of time, as if waiting for a prophecy to unfold.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-card wow fadeIn" data-wow-delay="0.6s">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/static/img/character7.png" alt="Colonel Aureliano Buendía">
+                        <h3>Rebeca</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Rebeca</h3>
+                        <p>A girl with no memories and a bag of bones. She arrived in silence, ate earth in the corners, and turned the house into a place of whispers. No one knew what she brought, only that something had changed.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
         <!-- Footer -->
@@ -547,6 +405,27 @@
     <script type="text/javascript" src="/static/js/parallaxy.js"></script>
     <script type="text/javascript" src="/static/js/anim-faro/createjs-2015.11.26.min.js"></script>
     <script type="text/javascript" src="/static/js/anim-faro/anim-faro.js"></script>
+
+    <!-- Character Modal -->
+    <div id="characterModal" class="character-modal">
+        <div class="character-modal-content">
+            <!-- Modal content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="/static/js/character-cards.js"></script>
+    <script src="/static/js/music-player.js"></script>
+
+    <!-- 添加音乐播放器 -->
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="/static/audio/background-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="musicToggle" class="music-toggle">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
 
 </body>
 </html>
