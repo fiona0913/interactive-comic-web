@@ -125,4 +125,53 @@ pip install flask
   ```bash
   python app.py
 
+## ✅ **Clent‘s Reviewed Features**
+
+- **Loading Animation**  
+  A small animation plays when the page loads, adding a fun visual touch to the site.
+
+- **Homepage Title**  
+  The homepage displays the title *One Hundred Years of Solitude* with custom typography and decorative illustrations that match the novel’s vibe.
+
+- **Prologue Rain Effect**  
+  A rain GIF has been added behind the background of the prologue. The prologue text, its title, and the Chapter 1 title are laid out clearly and logically.
+
+- **Chapter 1 Content**  
+  Chapter 1 (*The Miracle of Ice*) has been implemented with complete text layout and scrolling illustration effects.
+
+- **Chapter 1 Character Cards**  
+  Includes 4 interactive character cards (José Arcadio Buendía, Úrsula, Melquíades, Colonel Aureliano Buendía) with front/back flip functionality and hover/click animations.
+
+- **Sidebar Functionality**  
+  The sidebar generates animations based on scrolling and chapter position, with interactive effects that respond smoothly.
+
+---
+
+## ✅ **Approval/Change Requests**
+
+| Feature                      | Status             | Notes                                                                                                             |
+|------------------------------|--------------------|-------------------------------------------------------------------------------------------------------------------|
+| Homepage Title Animation     | ✅ Approved        | Smooth and natural; meets expectations.                                                                           |
+| Chapter 1 Text Section       | 🛠 Needs revision  | Suggest adjusting paragraph spacing and line height to improve readability.                                       |
+| Character Card Flip Function | 🛠 Needs revision  | Flip works well, but suggest adding a small icon to hint “click to flip” for clearer guidance. Also continue refining the card UI design. |
+
+---
+
+## 🐞 **Bugs Found**
+
+- **Issue:** Sometimes when the page loads, all images overlap each other. Users need to refresh a few times or resize the window to fix it. The image animations are not fully stable yet.
+
+- **Question:** While the character cards help introduce Chapter 1’s characters, is there a more effective way to help readers remember the names and what the characters do?
+
+---
+
+## 💡 **Improvement Suggestions**
+
+- The website is still mostly visual in its interaction. It would be great to add some **music and sound interactions** to enhance engagement and fun.
+
+---
+
+## 🔄 **Reflection**
+
+The developer has successfully implemented the homepage animation, Chapter 1 narrative content, and interactive character cards as core features. The overall visual and functional direction aligns well with expectations. Minor polishing is still needed for responsiveness and UX cues (e.g., adding a flip hint icon). The next priorities are completing Chapter 2 and 3 content, expanding the multi-chapter character card system, and further optimizing the mobile experience.
 
