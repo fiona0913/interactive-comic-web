@@ -28,9 +28,9 @@
 
 </head>
 
-<body class="lang_it">
+<body class="lang_it menuOn">
 
-    <div class="loading_layer" style="display: none;">
+    <div class="loading_layer">
         <div class="w">
             <div class="torre">
                 <img src="/static/img/loading.gif">
@@ -493,10 +493,6 @@
     <script>
         // 修复 sidebar 动画的锚点数组
         $(document).ready(function() {
-            // 页面加载完成后确保 loading layer 隐藏
-            $('.loading_layer').hide();
-            $('body').removeClass('menuOn');
-            
             // 更新锚点数组以匹配当前HTML结构
             window.anchorPagine = [".header", ".impero", ".musa", ".footer-section"];
             
