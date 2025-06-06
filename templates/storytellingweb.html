@@ -28,9 +28,9 @@
 
 </head>
 
-<body class="lang_it menuOn" onload="init();">
+<body class="lang_it">
 
-    <div class="loading_layer">
+    <div class="loading_layer" style="display: none;">
         <div class="w">
             <div class="torre">
                 <img src="/static/img/loading.gif">
@@ -57,7 +57,7 @@
             <div class="dot d0" data-section="header"><img src="/static/img/siderbar1.png"></div>
             <div class="dot d1" data-section="impero"><img src="/static/img/siderbar2.png"></div>
             <div class="dot d2" data-section="musa"><img src="/static/img/siderbar3.png"></div>
-            <div class="dot d3" data-section="luce"><img src="/static/img/siderbar4.png"></div>
+            <div class="dot d3" data-section="footer-section"><img src="/static/img/siderbar4.png"></div>
         </div>
     </div>
 
@@ -301,7 +301,7 @@
                     </div>
                     <div class="card-back">
                         <h3>José Arcadio</h3>
-                        <p>The eldest son, tall and intense. He burned silently. One night, a woman arrived like a storm and left without a trace—except for the child she didn’t take. José Arcadio vanished, driven by desire and marked by abandonment.
+                        <p>The eldest son, tall and intense. He burned silently. One night, a woman arrived like a storm and left without a trace—except for the child she didn't take. José Arcadio vanished, driven by desire and marked by abandonment.
 
                         </p>
                     </div>
@@ -355,30 +355,104 @@
 
 
         <!-- Footer -->
-        <div class="footer">
-           <img src="/static/img/footer.png" class="omino wow fadeIn">
-            <div class="bottom">
-                <div class="wrapper">
+        <footer class="footer-section" id="footer">
+            <!-- Footer Image -->
+            <img src="/static/img/footer.png" class="omino wow fadeIn">
+            
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            
+            <div class="footer-container">
+                <!-- Demo Information Section -->
+                <div class="footer-content">
+                    <div class="demo-info">
+                        <h2 class="footer-title">Interactive Storytelling Demo</h2>
+                        <p class="demo-description">
+                            This is a demonstration website showcasing how traditional books can be transformed into 
+                            immersive interactive web experiences. We combine classic literature with modern web 
+                            technologies to create engaging digital storytelling platforms.
+                        </p>
+                        <div class="call-to-action">
+                            <h3>For Authors & Publishers</h3>
+                            <p>
+                                Are you a novelist or publisher interested in creating similar interactive experiences 
+                                for your works? We'd love to collaborate with you to bring your stories to life in 
+                                the digital realm.
+                            </p>
+                        </div>
+                    </div>
 
-                  <p class="big">Say something :) and Join me!</p>
+                    <!-- Contact Form Section -->
+                    <div class="contact-form-section">
+                        <h3 class="form-title">Get In Touch</h3>
+                        <form class="contact-form" action="/contact" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project_type">Project Type</label>
+                                <select id="project_type" name="project_type">
+                                    <option value="">Select Project Type</option>
+                                    <option value="novel">Novel Adaptation</option>
+                                    <option value="short_story">Short Story Collection</option>
+                                    <option value="educational">Educational Content</option>
+                                    <option value="corporate">Corporate Storytelling</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Tell us about your project *</label>
+                                <textarea id="message" name="message" rows="4" required 
+                                    placeholder="Describe your project, timeline, and any specific requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
 
-                  <br>
-                  <br>
+                <!-- Contact Information Section -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:hello@interactivestory.demo">hello@interactivestory.demo</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Business Inquiries:</strong>
+                            <a href="mailto:business@interactivestory.demo">business@interactivestory.demo</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Response Time:</strong>
+                            <span>We typically respond within 24-48 hours</span>
+                        </div>
+                    </div>
+                </div>
 
-                  <form action="/action_page.php">
-                  <label for="name">Name:</label><br>
-                   <input type="text" id="name" name="name"><br><br>
-                         <label for="message">Message:</label><br>
-                     <input type="text" id="message" name="message"><br><br>
-                      <label for="message">Email:</label><br>
-                      <input type="text" id="email" name="email"><br><br>
-                       <input type="submit" value="Submit">
-</form>
-
-
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Interactive Storytelling Demo. Created for educational and demonstration purposes.</p>
+                    <p class="tech-note">Built with Flask, HTML5, CSS3, and JavaScript</p>
                 </div>
             </div>
-        </div>
+        </footer>
         <!-- End footer -->
 
     </div>
@@ -415,6 +489,115 @@
 
     <script src="/static/js/character-cards.js"></script>
     <script src="/static/js/music-player.js"></script>
+    
+    <script>
+        // 修复 sidebar 动画的锚点数组
+        $(document).ready(function() {
+            // 页面加载完成后确保 loading layer 隐藏
+            $('.loading_layer').hide();
+            $('body').removeClass('menuOn');
+            
+            // 更新锚点数组以匹配当前HTML结构
+            window.anchorPagine = [".header", ".impero", ".musa", ".footer-section"];
+            
+            // 重新定义 updateSidebar 函数
+            window.updateSidebar = function() {
+                if($(window).width() > 640) {
+                    var bar = $('.sidebar .sect.s0 .progress');
+                    var currentSec = '.impero';
+                    var sommaAltezze = 0;
+                    var s = $(window).scrollTop() - $(anchorPagine[0]).offset().top;
+                    var d = $(anchorPagine[0]).offset().top;
+
+                    $('.sidebar .bar .dot').removeClass('on');
+
+                    for(i=0; i<=anchorPagine.length-1; i++) {
+                        if(s >= $(anchorPagine[i]).offset().top) {
+                            $('.sidebar .sect.s' + i + ' .progress').css('height', '100%');
+                            $('.sidebar .bar .dot.d' + i).addClass('on');
+                            sommaAltezze = Math.round($(anchorPagine[i]).offset().top);
+                            continue;
+                        } else {
+                            s = $(anchorPagine[i-1]).offset().top + ( $(window).scrollTop() - $(anchorPagine[i-1]).offset().top );
+                            d = $(anchorPagine[i]).offset().top - $(anchorPagine[i-1]).offset().top;
+                            bar = $('.sidebar .sect.s' + (i-1) + ' .progress');
+                            currentSec = anchorPagine[i];
+                            break;
+                        }
+                    }
+
+                    if( s >= $(anchorPagine[0]).height() && s <= $(anchorPagine[3]).offset().top) {
+                        $('.sidebar').addClass('visible');
+                    } else {
+                        $('.sidebar').removeClass('visible');
+                    }
+
+                    var scrollPercent = ( (s - sommaAltezze) / d ) * 100;
+                    bar.css('height', Math.round(scrollPercent) + '%');
+                }
+            };
+            
+            // 绑定滚动事件
+            $(window).scroll(function() {
+                updateSidebar();
+            });
+            
+            // 绑定 sidebar 点击事件
+            $('.sidebar .bar .dot').each(function(i, el) {
+                $(el).click(function() {
+                    var section = $(el).data('section');
+                    if(section) {
+                        var target = '.' + section;
+                        if($(target).length > 0) {
+                            $('html, body').animate({
+                                scrollTop: $(target).offset().top
+                            }, 1200, 'swing');
+                        }
+                    }
+                });
+            });
+            
+            // 处理联系表单提交
+            $('.contact-form').on('submit', function(e) {
+                // 显示提交中的状态
+                var submitBtn = $(this).find('.submit-btn');
+                var originalText = submitBtn.text();
+                submitBtn.text('Sending...').prop('disabled', true);
+                
+                // 允许正常提交，服务器会处理重定向
+                setTimeout(function() {
+                    submitBtn.text(originalText).prop('disabled', false);
+                }, 1000);
+            });
+            
+            // 如果 URL 中有 #footer，滚动到 footer
+            if (window.location.hash === '#footer') {
+                setTimeout(function() {
+                    $('html, body').animate({
+                        scrollTop: $('#footer').offset().top
+                    }, 1000);
+                }, 500);
+            }
+            
+            // 强制显示 sidebar
+            setTimeout(function() {
+                $('.sidebar').addClass('visible');
+                updateSidebar();
+            }, 1000);
+            
+            // 检查图片路径是否正确
+            $('.sidebar .bar .dot img').each(function() {
+                var img = new Image();
+                img.onload = function() {
+                    console.log('Sidebar image loaded:', $(this).attr('src'));
+                };
+                img.onerror = function() {
+                    console.error('Sidebar image failed to load:', $(this).attr('src'));
+                };
+                img.src = $(this).attr('src');
+            });
+        });
+    </script>
 
     <!-- 添加音乐播放器 -->
     <div class="music-player">
