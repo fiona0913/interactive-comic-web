@@ -25,6 +25,40 @@
     <link href="/static/css/main.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/css/character-cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+    .flash-message {
+        padding: 12px 16px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        animation: slideIn 0.3s ease-out;
+    }
+    
+    .flash-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+    
+    .flash-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
 
 </head>
 
@@ -493,6 +527,21 @@
     <script>
         // 修复 sidebar 动画的锚点数组
         $(document).ready(function() {
+            // 如果页面有hash（比如#footer），跳过loading动画
+            var hasHash = window.location.hash;
+            if (hasHash) {
+                $('.loading_layer').hide();
+                $('body').removeClass('menuOn');
+                
+                // 覆盖 funzioni-01.js 中的 imagesLoaded 逻辑
+                $('body').imagesLoaded = function() {
+                    return {
+                        always: function() { return this; },
+                        progress: function() { return this; }
+                    };
+                };
+            }
+            
             // 更新锚点数组以匹配当前HTML结构
             window.anchorPagine = [".header", ".impero", ".musa", ".footer-section"];
             
@@ -555,16 +604,59 @@
             
             // 处理联系表单提交
             $('.contact-form').on('submit', function(e) {
-                // 显示提交中的状态
-                var submitBtn = $(this).find('.submit-btn');
+                e.preventDefault(); // 阻止默认表单提交
+                
+                var form = $(this);
+                var submitBtn = form.find('.submit-btn');
                 var originalText = submitBtn.text();
+                
+                // 显示提交中的状态
                 submitBtn.text('Sending...').prop('disabled', true);
                 
-                // 允许正常提交，服务器会处理重定向
-                setTimeout(function() {
-                    submitBtn.text(originalText).prop('disabled', false);
-                }, 1000);
+                // 使用AJAX提交表单
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        if (response.success) {
+                            // 显示成功消息
+                            showMessage(response.message, 'success');
+                            form[0].reset(); // 重置表单
+                        } else {
+                            showMessage(response.message, 'error');
+                        }
+                    },
+                    error: function(xhr) {
+                        var errorMsg = 'An error occurred. Please try again.';
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMsg = xhr.responseJSON.message;
+                        }
+                        showMessage(errorMsg, 'error');
+                    },
+                    complete: function() {
+                        // 恢复按钮状态
+                        submitBtn.text(originalText).prop('disabled', false);
+                    }
+                });
             });
+            
+            // 显示消息的函数
+            function showMessage(message, type) {
+                // 移除已存在的消息
+                $('.flash-message').remove();
+                
+                // 创建新的消息元素
+                var messageDiv = $('<div class="flash-message flash-' + type + '">' + message + '</div>');
+                $('.contact-form').prepend(messageDiv);
+                
+                // 3秒后自动移除消息
+                setTimeout(function() {
+                    messageDiv.fadeOut(function() {
+                        $(this).remove();
+                    });
+                }, 3000);
+            }
             
             // 如果 URL 中有 #footer，滚动到 footer
             if (window.location.hash === '#footer') {

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 import os
 
 app = Flask(__name__)
@@ -20,17 +20,26 @@ def contact():
     project_type = request.form.get('project_type')
     message = request.form.get('message')
     
+    # Basic validation
+    if not name or not email or not message:
+        return jsonify({
+            'success': False, 
+            'message': 'Please fill in all required fields.'
+        }), 400
+    
     # Here you would typically save to database or send email
-    # For now, we'll just flash a success message
-    flash('Thank you for your message! We will get back to you within 24-48 hours.', 'success')
+    # For now, we'll just return a success response
     
     # In a real application, you might want to:
-    # 1. Validate the form data
+    # 1. Validate the form data more thoroughly
     # 2. Save to database
     # 3. Send email notification
     # 4. Log the submission
     
-    return redirect(url_for('index') + '#footer')
+    return jsonify({
+        'success': True,
+        'message': 'Thank you for your message! We will get back to you within 24-48 hours.'
+    })
 
 @app.errorhandler(404)
 def page_not_found(e):
